@@ -3,7 +3,7 @@ import { updateTodo } from '../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { editTodo } from '../features/editSlice';
 
-import { BsX } from 'react-icons/bs'
+// import { BsX } from 'react-icons/bs'
 
 function EditTodo() {
   // REDUX SELECTORS
@@ -32,10 +32,10 @@ function EditTodo() {
             <div className='absolute top-1/2 -translate-y-1/2 bg-slate-300 p-3 sm:p-10'>
               <h1 className=' text-xl font-semibold'>Edit Todo</h1>
 
-              <div className='absolute right-0 top-0 text-xl cursor-pointer'
+              <div className='absolute right-2 top-0 text-xl cursor-pointer'
                 onClick={()=>{ dispatch(editTodo()) }}
               >
-                {<BsX />}
+                X
               </div>
 
               <div className=' bg-slate-500 h-[0.5px] w-full mb-4'></div>
