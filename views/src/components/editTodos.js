@@ -3,7 +3,6 @@ import { updateTodo } from '../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { editTodo } from '../features/editSlice';
 
-// import { BsX } from 'react-icons/bs'
 
 function EditTodo() {
   // REDUX SELECTORS
