@@ -1,4 +1,4 @@
-import { server } from "../../keys/key";
+import { server } from "../keys/key";
 
 const getAllTodos = async () => {
     try{
