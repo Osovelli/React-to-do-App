@@ -1,6 +1,8 @@
+import { server } from "../../keys/key";
+
 const getAllTodos = async () => {
     try{
-        const response = await fetch('http://localhost:4001/todos');
+        const response = await fetch(`${server}/todos`);
         return await response.json()
     }catch(error){
         return error
@@ -9,7 +11,7 @@ const getAllTodos = async () => {
 
 const getTodo = async (id) => {
     try {
-        const response = await fetch(`http://localhost:4001/todos/${id}`);
+        const response = await fetch(`${server}/todos/${id}`);
         return await response.json();
     } catch (error) {
         return error
@@ -19,7 +21,7 @@ const getTodo = async (id) => {
 const createTodo = async (description) => {
     try {
         if(description){
-            const response = await fetch(`http://localhost:4001/todos`, {
+            const response = await fetch(`${server}/todos`, {
             method: "POST",
             body: JSON.stringify({description}),
             headers: { "Content-type": "application/json" }
@@ -33,7 +35,7 @@ const createTodo = async (description) => {
 
 const updateTodo = async (id, description) => {
     try {
-        const response = await fetch(`http://localhost:4001/todos/${id}`, {
+        const response = await fetch(`${server}/todos/${id}`, {
             method: "PUT",
             body: JSON.stringify({description}),
             headers: { "Content-type": "application/json" }
@@ -46,7 +48,7 @@ const updateTodo = async (id, description) => {
 
 const deleteTodo = async (id) => {
     try {
-        const response = await fetch(`http://localhost:4001/todos/${id}`, {
+        const response = await fetch(`${server}/todos/${id}`, {
             method: "DELETE"
         });
         console.log(response)
